@@ -80,12 +80,12 @@
       <h2 class="subtitle">Third party script used to verify games on crash game.</h2>
     </div>
     <hr>
-    <div class="container">
+    <div class="container" id="container-0">
       <p>The following sites have purchased a non-distributable copy of the previous version of top.game’s source code, exempting them from the requirements of the AGPL:</p>
       <p><a target="_blank" href="https://top.game">https://top.game</a></p>
     </div>
     <hr>
-    <div class="container">
+    <div class="container" id="container-1">
       <p>We using a salted hash in order to provide the most randomized and fair results possible. For further details, please visit <a target="_blank" href="https://bitcointalk.org/index.php?topic=5464114">https://bitcointalk.org/index.php?topic=5464114</a></p>
     </div>
     <hr>
@@ -131,6 +131,10 @@
     </div>
   </section>
     <script type="text/javascript">
+      if (location.host !== 'topgame-project.github.io/') {
+        $("#container-0").hide()
+        $("#container-1").hide()
+      }
       var isVerifying = false;
       $('#game_verify_submit').on('click', () => {
         if (isVerifying) return;
